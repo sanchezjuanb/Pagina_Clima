@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clima en {{ ciudad }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Pronóstico en {{ ciudad }} ⛅</h1>
+
+    <!-- Formulario para seleccionar ciudad -->
+    <form method="get">
+        <label id="texto"for="ciudad">Elige una ciudad:</label>
+        <select name="ciudad" id="ciudad" onchange="this.form.submit()">
+            {% for c in ciudades %}
+                <option value="{{ c }}" {% if c == ciudad %}selected{% endif %}>{{ c }}</option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <div class="contenedor">
+        {% for dia, info in dias_info.items() %}
+            {% if info.temp_min >= 10 and info.humedad_alta %}
+                <div class="card alerta">
+                    ⚠️ ALERTA {{ dia }}<br>
+                    Temp mínima: {{ info.temp_min }}°C<br>
+                    Humedad ≥ 80%
+                </div>
+            {% else %}
+                <div class="card ok">
+                    {{ dia }}<br>
+                    Temp mínima: {{ info.temp_min }}°C<br>
+                    No se cumplen criterios
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+<div>
+<a class="btn" href="https://openweathermap.org/city/{{ ciudad_id }}" target="_blank">
+    Ver información completa
+</a>
+</div>
+</body>
+</html>
