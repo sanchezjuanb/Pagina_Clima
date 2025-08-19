@@ -88,13 +88,13 @@ select {
         font-size: 5vw;
     }
     .contenedor {
-        grid-template-columns: repeat(5, 1fr); /* 2 columnas */
+        columns: 1;
     }
     .card {
         font-size: 4vw;
     }
     .btn {
-        font-size: 5vw;
+        font-size: 7vw;
     }
 }
 
@@ -117,7 +117,7 @@ select {
         font-size: 25px;
     }
     .btn {
-        font-size: 30px;
-        max-width: 300px;
+        font-size: 50px;
+        width: 700px;
     }
 }
