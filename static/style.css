@@ -8,14 +8,18 @@ body {
     margin: 0;
     background: #f0f0f0;
     padding: 20px;
+    background: linear-gradient(rgba(14, 27, 59, 0.85), rgba(14, 27, 59, 0.85)),
+              url('./img/finca.jpg') center/cover no-repeat;
+      height: 100vh; /* Ocupa toda la altura de la pantalla */
+
 }
 
 h1 {
     text-align: center;
     font-size: 55px;
+    color: white;
 
 }
-
 
 .contenedor {
     display: flex;
@@ -45,15 +49,16 @@ h1 {
 }
 
 .btn {
-    display: inline-block;
-    margin-top: 20px;
+    position: absolute;
+    top: 50%;       /* 50% desde arriba */
+    left: 50%;      /* 50% desde la izquierda */
+    transform: translate(-50%, -50%); /* lo corrige para que quede exacto */
+    
     padding: 10px 20px;
     background-color: #007BFF;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    text-align: center;
-
 }
 
 .btn:hover {
@@ -64,9 +69,55 @@ form {
     text-align: center;
     margin-bottom: 20px;
     font-size: 30px;
+        color: white;
+
 }
 
 select {
     padding: 5px;
     font-size: 30px;
+}
+@media (min-width: 480px) {
+    h1 {
+        font-size: 6vw;
+    }
+    form {
+        font-size: 5vw;
+    }
+    select {
+        font-size: 4vw;
+    }
+    .contenedor {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+    .card {
+        font-size: 4vw;
+    }
+    .btn {
+        font-size: 4vw;
+    }
+}
+
+/* Media query para 768px (tablets) */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 55px;
+    }
+    form {
+        font-size: 45px;
+    }
+    select {
+        font-size: 30px;
+    }
+    .contenedor {
+        grid-template-columns: repeat(5, 1fr); /* 3 columnas */
+        gap: 15px;
+    }
+    .card {
+        font-size: 25px;
+    }
+    .btn {
+        font-size: 30px;
+        max-width: 300px;
+    }
 }

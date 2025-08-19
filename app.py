@@ -27,9 +27,9 @@ CIUDADES = [
 ]
 
 CIUDADES_ID = {
-    "Goudge, AR": 3855065,
+    "Goudge, AR": 3854916,
     "San Rafael, AR": 3836669,
-    "Monte Comán, AR": 3836668,
+    "Monte Comán, AR": 3832803,
     "Cuadro Nacional, AR": 3836669,
     "Salto de las Rosas, AR": 3836669,
     "Villa Atuel, AR": 3832803,

@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Pronóstico en {{ ciudad }} ⛅</h1>
-
+    <h1>Prevención de peronospera en {{ ciudad }} ⛅</h1>
     <!-- Formulario para seleccionar ciudad -->
     <form method="get">
         <label id="texto"for="ciudad">Elige una ciudad:</label>
@@ -36,8 +35,8 @@
         {% endfor %}
     </div>
 <div>
-<a class="btn" href="https://openweathermap.org/city/{{ ciudad_id }}" target="_blank">
-    Ver información completa
+<a class="btn" href="https://openweathermap.org/" target="_blank">
+    Para más información, visita OpenWeatherMap
 </a>
 </div>
 </body>
