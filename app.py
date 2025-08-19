@@ -1,10 +1,13 @@
 from flask import Flask, render_template, request
 import requests
 from datetime import datetime, timedelta
+import os
 
 app = Flask(__name__)
 
-API_KEY = "742a97deee032e849370147a6165f6bd"
+# 🔑 Ahora la API Key se lee desde las variables de entorno
+API_KEY = os.getenv("API_KEY")
+
 CIUDADES = [
     "Goudge, AR",
     "San Rafael, AR",
@@ -21,7 +24,6 @@ CIUDADES = [
     "Las Paredes, AR",
     "Los Reyunos, AR",
     "Villa Atuel Norte, AR",
-
 ]
 
 CIUDADES_ID = {
